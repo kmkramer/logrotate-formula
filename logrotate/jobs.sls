@@ -5,7 +5,7 @@
 include:
   - logrotate
 
-{% for key,value in jobs.items() %}
+{% for key, value in jobs.iteritems() %}
 logrotate_{{key}}:
   file.managed:
     - name: {{ logrotate.include_dir }}/{{ key.split("/")[-1] }}
